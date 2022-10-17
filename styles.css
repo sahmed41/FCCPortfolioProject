@@ -1,0 +1,12 @@
+#welcome-section {
+    height: 100vh;
+  }
+  
+  #navbar {
+    position: fixed;
+    top: 0;
+  }
+  
+  @media (min-width: 960px) {
+    body {background-color:red;}
+  }
