@@ -195,6 +195,7 @@ h2 {
 
 #contact input, #contact textarea {
   border-radius: 5px;
+  width: 100%;
 }
 
 
@@ -245,6 +246,16 @@ footer p {
 }
 /* ------------ */
 /* Media Query */
+@media (min-width: 720px) {
+  #project-tiles {
+    flex-direction: row;
+  }
+
+  .project-tile {
+    width: 48%;
+  }
+}
+
 @media (min-width: 960px) {
   /* Navbar Styles */
   #navbar {
@@ -293,13 +304,14 @@ footer p {
     column-gap: 50px;
   }
 
-  #contact-fomr {
+  #contact-form, #contact-info {
+    width: 48%;
+  }
+
+  #contact-form {
     align-self: center;
   }
 
-  #contact textarea {
-    width: 100%;
-  }
 
   /* ------------ */
 
