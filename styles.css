@@ -16,6 +16,7 @@ font-family: 'Oswald', sans-serif; */
   --color-secondary: #c8ccc9;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,6 +27,19 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 2rem;
 }
+
+section {
+  min-height: 100vh;
+  
+  width: 100%;
+  padding: 50px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar styles */
 
 #navbar {
   width: 100%;
@@ -40,6 +54,7 @@ body {
   display: flex;
   justify-content: space-between;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 #navbar ul li {
@@ -50,7 +65,6 @@ body {
   display: block;
   width: 100%;
   padding: 10px;
-  text-decoration: none;
   text-align: center;
   color: var(--color-secondary);
   font-size: 2.2rem;
@@ -61,19 +75,178 @@ body {
   color: var(--color-primary);
 }
 
+/* ------- */
+
+/* Welcome Section Styles */
+
 #welcome-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   background: var(--bg-light);
   color: var(--color-primary);
 }
-  
+
+/* ----------- */
+
+/* Project Section Styles */
+
+#projects {
+  background-color: var(--color-primary);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--color-secondary);
+  text-decoration: underline;
+}
 
 
+#project-tiles {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  flex-wrap: wrap;
+}
+
+.project-tile {
+  width: 80%;
+  margin: auto;
+  background-color: var(--color-secondary);
+}
+
+.project-tile img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.project-tile a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 15px 0;
+  color:  var(--color-primary);
+}
+
+.project-tile a::before, .project-tile a::after {  
+  opacity: 0;
+  color: var(--bg-light);
+  transition-duration: 1s;
+}
+
+.project-tile a::before {
+  content: "< ";
+}
+
+.project-tile a:hover::before {
+  opacity: 100;
+}
+
+.project-tile a::after {
+  content: " />";
+}
+
+.project-tile a:hover::after {
+  opacity: 100;;
+}
+
+#more-projects-link {
+  display: block;
+  margin: 40px  auto;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);  
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#arrow {
+  vertical-align: middle;
+}
+/* ---------------- */
+
+/* Contact Section */
+#contact {
+  background-color: var(--bg-light);
+}
+
+#contact-means {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  row-gap: 20px;
+}
+
+.input-group {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.input-group:nth-of-type(3) label {
+  margin: 10px 0;
+  margin-bottom: 10px;
+}
+
+#contact input, #contact textarea {
+  border-radius: 5px;
+}
+
+
+#contact input {
+  height: 30px;
+  width: 83%;
+  display: inline-block;
+}
+
+#contact label {
+  display: inline-block;
+  width: 15%;
+  vertical-align: middle;
+}
+
+#contact #contact-info  p  {
+  margin: 10px 0;
+}
+#contact #contact-info  p .fa-brands {
+  font-size: 3rem;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 20px;
+  color: var(--color-primary);
+}
+
+#contact #contact-info p:last-of-type .fa-brands{
+  margin-right: 12px;
+}
+
+#contact #contact-info a {
+  display: inline-block;
+  color: var(--color-primary);
+}
+
+/* ---------- */
+
+/* Footer Styles */
+footer {
+  background-color: var(--color-primary);
+  padding: 20px 0;
+}
+
+footer p {
+  /* width: 100px; */
+  text-align: center;
+  color: var(--color-secondary);
+}
+/* ------------ */
+/* Media Query */
 @media (min-width: 960px) {
+  /* Navbar Styles */
   #navbar {
     display: flex;
     justify-content: flex-end;
@@ -82,6 +255,9 @@ body {
   #navbar ul {
     width: 40%;
   }
+  /* ------------- */
+
+  /* Welcom Section Styling */
 
   #welcome-section h1{
     font-size: 4.5rem;
@@ -90,4 +266,41 @@ body {
   #welcome-section p {
     font-size: 3rem;
   }
+  /* --------------- */
+
+  /* Project Section Styles */
+  
+  #project-tiles {
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    justify-content: space-evenly;
+  }
+
+  .project-tile {
+    width: 30%;
+  }
+
+  /* -------- */
+
+  /* Contact Section */
+  #contact {
+    min-height: initial;
+  }
+
+  #contact-means {
+    flex-direction: row;
+    column-gap: 50px;
+  }
+
+  #contact-fomr {
+    align-self: center;
+  }
+
+  #contact textarea {
+    width: 100%;
+  }
+
+  /* ------------ */
+
 }
